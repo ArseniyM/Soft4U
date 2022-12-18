@@ -22,6 +22,7 @@ namespace Soft4U.Windows
         public MainWindow()
         {
             InitializeComponent();
+            // Привет от Лёни!
         }
     }
 }
