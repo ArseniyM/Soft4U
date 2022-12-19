@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Soft4U"
              StartupUri="Windows\MainWindow.xaml">
     <Application.Resources>
-         
+         <!--dadadasdsadas -->
     </Application.Resources>
 </Application>
