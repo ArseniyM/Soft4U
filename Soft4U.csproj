@@ -8,11 +8,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\cat1.png" />
+    <None Remove="Resources\cat2.png" />
+    <None Remove="Resources\cat3.png" />
+    <None Remove="Resources\cat4.png" />
+    <None Remove="Resources\exit.png" />
+    <None Remove="Resources\icon.ico" />
+    <None Remove="Resources\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\cat1.png" />
+    <Resource Include="Resources\cat2.png" />
+    <Resource Include="Resources\cat3.png" />
+    <Resource Include="Resources\cat4.png" />
+    <Resource Include="Resources\exit.png" />
+    <Resource Include="Resources\icon.ico" />
+    <Resource Include="Resources\logo.png" />
   </ItemGroup>
 
 </Project>

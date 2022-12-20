@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\
+C:\Users\averi\source\repos\Soft4U\obj\Debug\net7.0-windows\
 Soft4U
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-D:\Visual studio\Project\Soft4U\App.xaml
-1-1819699537
+C:\Users\averi\source\repos\Soft4U\App.xaml
+114846223
 
-12783310025
-2161378927901
-Windows\MainWindow.xaml;
+23-1037644497
+216-1883864940
+Pages\ApplicationPage.xaml;Pages\ClientsPage.xaml;Pages\LicPO.xaml;Pages\MainPage.xaml;Pages\MyLic.xaml;Windows\AddPO.xaml;Windows\AppCreate.xaml;Windows\Auth.xaml;Windows\EditPO.xaml;Windows\MainWindow.xaml;Windows\Registration.xaml;
 
-False
+True
 

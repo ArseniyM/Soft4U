@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Soft4U"
              StartupUri="Windows\MainWindow.xaml">
     <Application.Resources>
-         <!--dadadasdsadas -->
+        <Style TargetType="Grid" x:Key="GridStyle">
+            <Setter  Property="Background" Value="#FFDDDDDD"/>
+        </Style>
     </Application.Resources>
 </Application>

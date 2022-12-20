@@ -1,0 +1,53 @@
+﻿<Page x:Class="Soft4U.Pages.ApplicationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Soft4U.Pages"
+      mc:Ignorable="d"
+      FontFamily="Comic Sans MS" FontSize="16"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Заявки">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.6*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Подать заявку" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="170" FontSize="18"/>
+            <Image Grid.Column="1" Source="/Resources/cat2.png"/>
+        </Grid>
+        <ListView Name="MyLicList" Grid.Row="1" HorizontalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Тема" Grid.Column="0" Width="100"/>
+                            <TextBlock Text="Название" Grid.Column="1" Width="100"/>
+                            <TextBlock Text="Коментарий" Grid.Column="2" Width="150"/>
+                            <TextBlock Text="Статус" Grid.Column="3" Width="150"/>
+                            <Button Name="Btngive" Content="Предоставить" Width="120" Margin="300 5 0 5" Visibility="Collapsed" Grid.ColumnSpan="4" Grid.Row="1" />
+                            <Button Name="BtnProdl" Content="Продлить" Width="120" Margin="300 5 0 5" Visibility="Collapsed" Grid.ColumnSpan="4" Grid.Row="1" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

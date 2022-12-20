@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Soft4U.Pages;
 
 namespace Soft4U.Windows
 {
@@ -22,7 +23,32 @@ namespace Soft4U.Windows
         public MainWindow()
         {
             InitializeComponent();
-            // Привет от Лёни!!!
+            FrameN.Navigate(new MainPage());
+        }
+
+        private void BtnMain(object sender, RoutedEventArgs e)
+        {
+            FrameN.Navigate(new MainPage());
+        }
+
+        private void BtnMy(object sender, RoutedEventArgs e)
+        {
+            FrameN.Navigate(new MyLic());
+        }
+
+        private void BtnLic(object sender, RoutedEventArgs e)
+        {
+            FrameN.Navigate(new LicPO());
+        }
+
+        private void BtnApp(object sender, RoutedEventArgs e)
+        {
+            FrameN.Navigate(new ApplicationPage());
+        }
+
+        private void BtnClients(object sender, RoutedEventArgs e)
+        {
+            FrameN.Navigate(new ClientsPage());
         }
     }
 }
