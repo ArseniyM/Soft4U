@@ -141,3 +141,24 @@ C:\Users\averi\source\repos\Soft4U\obj\Debug\net7.0-windows\Pages\ClientsPage.g.
 C:\Users\averi\source\repos\Soft4U\obj\Debug\net7.0-windows\Pages\ClientsPage.baml
 C:\Users\averi\source\repos\Soft4U\obj\Debug\net7.0-windows\Windows\AppCreate.g.cs
 C:\Users\averi\source\repos\Soft4U\obj\Debug\net7.0-windows\Windows\AppCreate.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\ApplicationPage.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\ClientsPage.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\LicPO.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\MainPage.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\MyLic.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\AddPO.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\AppCreate.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\Auth.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\EditPO.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\Registration.g.cs
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\App.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\ApplicationPage.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\ClientsPage.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\LicPO.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\MainPage.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Pages\MyLic.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\AddPO.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\AppCreate.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\Auth.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\EditPO.baml
+D:\Visual studio\Project\Soft4U\obj\Debug\net7.0-windows\Windows\Registration.baml

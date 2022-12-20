@@ -23,13 +23,13 @@
         <TextBlock Text="Авторизация" FontSize="18" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" Margin="10"/>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
             <TextBlock Text="Login" FontSize="12"/>
-            <TextBox/>
+            <TextBox Name="TxbLogin"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="10">
             <TextBlock Text="Password" FontSize="12"/>
-            <TextBox/>
+            <PasswordBox Name="PassBox"/>
         </StackPanel>
-        <Button Grid.Column="0" Grid.Row="3" Content="Войти" Width="120" Margin="10"/>
-        <Button Grid.Column="1" Grid.Row="3" Content="Очистить" Width="120" Margin="10"/>
+        <Button Grid.Column="0" Grid.Row="3" Content="Войти" Width="120" Margin="10" Click="BtnLogin_Click"/>
+        <Button Grid.Column="1" Grid.Row="3" Content="Зарегистрироватся" Width="160" Margin="10" Click="BtnRegistrait_Click"/>
     </Grid>
 </Window>

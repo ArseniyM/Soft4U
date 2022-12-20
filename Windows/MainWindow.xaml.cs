@@ -24,6 +24,8 @@ namespace Soft4U.Windows
         {
             InitializeComponent();
             FrameN.Navigate(new MainPage());
+            App.MainFrame = FrameN;
+            
         }
 
         private void BtnMain(object sender, RoutedEventArgs e)

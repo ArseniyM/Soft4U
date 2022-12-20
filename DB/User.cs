@@ -16,7 +16,9 @@ public partial class User
     public byte[]? Foto { get; set; }
 
     public long Role { get; set; }
+    public string Login { get; set; } = null!;
 
+    public string Password { get; set; } = null!;
     public virtual ICollection<ApplicationsUser> ApplicationsUsers { get; } = new List<ApplicationsUser>();
 
     public virtual Role RoleNavigation { get; set; } = null!;
