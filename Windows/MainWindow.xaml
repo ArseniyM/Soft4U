@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Soft4U.Windows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Soft4U" Height="650" Width="1000"
+        MinHeight="650" MinWidth="1000"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Comic Sans MS" FontSize="16"
+        Icon="/Resources/icon.ico">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Style="{StaticResource GridStyle}">
+            <TextBlock Name="TitelPage" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ElementName=FrameN, Path=Content.Title}"/>
+            <Image HorizontalAlignment="Left" Source="/Resources/logo.png"/>
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right">
+                <TextBlock Text="Добрый день" VerticalAlignment="Center" FontSize="12"/>
+                <Image Source="/Resources/exit.png" Margin="10" Name="BtnExit"/>
+                </StackPanel>
+    </Grid>
+        <Frame Grid.Row="1" Name="FrameN" NavigationUIVisibility="Hidden"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Главная" Grid.Column="0" Grid.Row="2" Click="BtnMain"/>
+            <Button Content="Мои лицензии" Grid.Column="1" Grid.Row="2" Click="BtnMy" Visibility="Visible"/>
+            <Button Content="Клиенты" Grid.Column="1" Grid.Row="2" Click="BtnClients" Visibility="Collapsed"/>
+            <Button Content="Лицензирование ПО" Grid.Column="2" Grid.Row="2" Click="BtnLic"/>
+            <Button Content="Заявки" Grid.Column="3" Grid.Row="2" Click="BtnApp"/>
+        </Grid>
     </Grid>
 </Window>

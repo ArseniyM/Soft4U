@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual studio\\Project\\Soft4U\\Soft4U.csproj": {}
+    "C:\\Users\\averi\\source\\repos\\Soft4U\\Soft4U.csproj": {}
   },
   "projects": {
-    "D:\\Visual studio\\Project\\Soft4U\\Soft4U.csproj": {
+    "C:\\Users\\averi\\source\\repos\\Soft4U\\Soft4U.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual studio\\Project\\Soft4U\\Soft4U.csproj",
+        "projectUniqueName": "C:\\Users\\averi\\source\\repos\\Soft4U\\Soft4U.csproj",
         "projectName": "Soft4U",
-        "projectPath": "D:\\Visual studio\\Project\\Soft4U\\Soft4U.csproj",
-        "packagesPath": "C:\\Users\\354as\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual studio\\Project\\Soft4U\\obj\\",
+        "projectPath": "C:\\Users\\averi\\source\\repos\\Soft4U\\Soft4U.csproj",
+        "packagesPath": "C:\\Users\\averi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\averi\\source\\repos\\Soft4U\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Visual studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\354as\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\averi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

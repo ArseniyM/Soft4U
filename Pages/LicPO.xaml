@@ -1,0 +1,58 @@
+﻿<Page x:Class="Soft4U.Pages.LicPO"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Soft4U.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      FontFamily="Comic Sans MS" FontSize="16"
+      Title="Лицензирование ПО">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="170" FontSize="18"/>
+            <Image Grid.Column="1" Source="/Resources/cat4.png"/>
+        </Grid>
+        <ListView Name="LicPOList" Grid.Row="1" HorizontalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Изменить" Name="Change" />
+                                    <MenuItem Header="Удалить" Name="Delete" />
+                                </ContextMenu>
+                            </Grid.ContextMenu>
+                            <TextBlock Text="{Binding Name}" Width="100" Grid.Column="0"/>
+                            <TextBlock Text="Описание" Width="100" Grid.Column="1"/>
+                            <TextBlock Text="Стоимость" Width="100" Grid.Column="2"/>
+                            <TextBlock Text="Длительность" Width="120" Grid.Column="3"/>
+                            <Button Name="Btn" Content="Подать заявку" Width="120" Margin="0 5 40 5" Visibility="Visible" Grid.ColumnSpan="2" Grid.Row="1"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
