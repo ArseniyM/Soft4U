@@ -103,6 +103,8 @@ public partial class Soft4UDbContext : DbContext
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Role).HasColumnName("role");
             entity.Property(e => e.Surname).HasColumnName("surname");
+            entity.Property(e => e.Login).HasColumnName("login");
+            entity.Property(e => e.Password).HasColumnName("password");
 
             entity.HasOne(d => d.RoleNavigation).WithMany(p => p.Users)
                 .HasForeignKey(d => d.Role)
