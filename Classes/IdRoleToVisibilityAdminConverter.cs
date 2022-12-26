@@ -9,11 +9,11 @@ using System.Windows.Data;
 
 namespace Soft4U.Classes
 {
-    class IdRoleToVisibilityConverter : IValueConverter
+    class IdRoleToVisibilityAdminConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((int)value == 2)
+            if ((long)value == 2)
             {
                 return "Collapsed";
             }

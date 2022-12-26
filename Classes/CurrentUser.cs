@@ -11,7 +11,7 @@ namespace Soft4U.Classes
 {
     class CurrentUser : INotifyPropertyChanged
     {
-        public static User currentUser;
+        public static User currentUser = new User();
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")

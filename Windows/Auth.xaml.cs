@@ -1,4 +1,5 @@
-﻿using Soft4U.DB;
+﻿using Soft4U.Classes;
+using Soft4U.DB;
 using Soft4U.Pages;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace Soft4U.Windows
                     {
                         if (context.Users.Where(e => e.Login == TxbLogin.Text && e.Password == PassBox.Password).FirstOrDefault() != null)
                         {
-                            App.currentUser = context.Users.Where(e => e.Login == TxbLogin.Text && e.Password == PassBox.Password).First();
+                            CurrentUser.currentUser = context.Users.Where(e => e.Login == TxbLogin.Text && e.Password == PassBox.Password).First();
                             App.MainFrame.Navigate(new MainPage());
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();

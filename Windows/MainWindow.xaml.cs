@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Soft4U.Pages;
+using Soft4U.Classes;
 
 namespace Soft4U.Windows
 {
@@ -28,7 +29,7 @@ namespace Soft4U.Windows
 
             Binding binding = new Binding
             {
-                Source = App.currentUser,
+                Source = CurrentUser.currentUser,
                 Path = new PropertyPath("Name"),
                 Mode = BindingMode.TwoWay
             };
