@@ -97,6 +97,9 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.v5.2
+*.v2
+*.suo
 
 # Chutzpah Test files
 _Chutzpah*
