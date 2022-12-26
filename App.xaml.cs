@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soft4U.DB;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,5 +16,6 @@ namespace Soft4U
     public partial class App : Application
     {
         public static Frame MainFrame = new Frame();
+        public static User currentUser = new User();
     }
 }

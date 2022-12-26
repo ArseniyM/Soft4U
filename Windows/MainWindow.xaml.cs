@@ -25,7 +25,14 @@ namespace Soft4U.Windows
             InitializeComponent();
             FrameN.Navigate(new MainPage());
             App.MainFrame = FrameN;
-            
+
+            Binding binding = new Binding
+            {
+                Source = App.currentUser,
+                Path = new PropertyPath("Name"),
+                Mode = BindingMode.TwoWay
+            };
+            tLogin.SetBinding(TextBlock.TextProperty, binding);
         }
 
         private void BtnMain(object sender, RoutedEventArgs e)

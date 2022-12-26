@@ -30,6 +30,6 @@
             <PasswordBox Name="PassBox"/>
         </StackPanel>
         <Button Grid.Column="0" Grid.Row="3" Content="Войти" Width="120" Margin="10" Click="BtnLogin_Click"/>
-        <Button Grid.Column="1" Grid.Row="3" Content="Зарегистрироватся" Width="160" Margin="10" Click="BtnRegistrait_Click"/>
+        <Button Grid.Column="1" Grid.Row="3" Content="Зарегистрироваться" Width="160" Margin="10" Click="BtnRegistrait_Click"/>
     </Grid>
 </Window>
