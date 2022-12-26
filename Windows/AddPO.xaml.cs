@@ -38,7 +38,7 @@ namespace Soft4U.Windows
                             Program newProgram = new Program
                             {
                                 Name = TxbName.Text,
-                                Cost = Convert.ToInt32(TxbCost.Text),
+                                Cost = Convert.ToDouble(TxbCost.Text),
                                 Discription = TxbDiscription.Text,
                                 License = Convert.ToInt32(TxbTime.Text)
                             };
