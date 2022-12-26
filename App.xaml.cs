@@ -16,6 +16,5 @@ namespace Soft4U
     public partial class App : Application
     {
         public static Frame MainFrame = new Frame();
-        public static User currentUser = new User();
     }
 }

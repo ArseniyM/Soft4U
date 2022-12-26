@@ -248,3 +248,4 @@ C:\Users\Administrator\Source\Repos\ArseniyM\Soft4U\obj\Debug\net7.0-windows\ref
 C:\Users\Administrator\Source\Repos\ArseniyM\Soft4U\obj\Debug\net7.0-windows\Soft4U.pdb
 C:\Users\Administrator\Source\Repos\ArseniyM\Soft4U\obj\Debug\net7.0-windows\Soft4U.genruntimeconfig.cache
 C:\Users\Administrator\Source\Repos\ArseniyM\Soft4U\obj\Debug\net7.0-windows\ref\Soft4U.dll
+C:\Users\Administrator\source\repos\ArseniyM\Soft4U\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
