@@ -20,7 +20,11 @@
             <TextBlock Name="TitelPage" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ElementName=FrameN, Path=Content.Title}"/>
             <Image HorizontalAlignment="Left" Source="/Resources/logo.png"/>
             <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right">
-                <TextBlock Text="Добрый день" VerticalAlignment="Center" FontSize="12"/>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Добрый день,"  FontSize="12"/>
+                    <TextBlock Name="tLogin" FontSize="12"/>
+                </StackPanel>
+                
                 <Image Source="/Resources/exit.png" Margin="10" Name="BtnExit"/>
                 </StackPanel>
     </Grid>

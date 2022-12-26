@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soft4U.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,56 @@ namespace Soft4U.Windows
         public Registration()
         {
             InitializeComponent();
+        }
+
+        private void RegistrationBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (tFam.Text != "" && tName.Text != "" && tLogin.Text != "" && tPas.Password != "")
+                {
+                    using (Soft4UDbContext context = new Soft4UDbContext())
+                    {
+                        if (context.Users.Where(e => e.Login == tLogin.Text).FirstOrDefault() == null)
+                        {
+
+                            User newUser = new User
+                            {
+                                Surname = tFam.Text,
+                                Name = tName.Text,
+                                Login = tLogin.Text,
+                                Password = tPas.Password,
+                                Role = 1
+                            };
+                            if (tOtch.Text != "")
+                                newUser.Middlename = tOtch.Text;
+                            context.Users.Add(newUser);
+                            context.SaveChanges();
+                            MessageBox.Show("Регистрация прошла успешно", "Регистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Пользователь с логином {tLogin.Text} уже зарегистрирован.","Повторение логина", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+
+                }
+                else
+                {
+                    string str = "Новый пользователь не создан, так как не заполнены поля: ";
+                    str += (tFam.Text == "") ? "  Фамилия," : "";
+                    str += (tName.Text == "") ? "  Имя," : "";
+                    str += (tLogin.Text == "") ? "  Логин," : "";
+                    str += (tPas.Password == "") ? "  Пароль," : "";
+                    str = str.TrimEnd(',');
+                    MessageBox.Show(str, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Произошла ошибка. Пользователь не создан.\n{ex.Message}", "Ошибка");
+            }
         }
     }
 }

@@ -38,6 +38,7 @@ namespace Soft4U.Windows
                     {
                         if (context.Users.Where(e => e.Login == TxbLogin.Text && e.Password == PassBox.Password).FirstOrDefault() != null)
                         {
+                            App.currentUser = context.Users.Where(e => e.Login == TxbLogin.Text && e.Password == PassBox.Password).First();
                             App.MainFrame.Navigate(new MainPage());
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();
@@ -62,7 +63,12 @@ namespace Soft4U.Windows
 
         private void BtnRegistrait_Click(object sender, RoutedEventArgs e)
         {
-
+            Registration registration = new Registration();
+            TxbLogin.Text = "";
+            PassBox.Password = "";
+            this.Visibility = Visibility.Collapsed;
+            registration.ShowDialog();
+            this.Visibility = Visibility.Visible;
         }
     }
 }
