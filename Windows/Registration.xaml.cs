@@ -42,7 +42,7 @@ namespace Soft4U.Windows
                                 Name = tName.Text,
                                 Login = tLogin.Text,
                                 Password = tPas.Password,
-                                Role = 1
+                                Role = 2
                             };
                             if (tOtch.Text != "")
                                 newUser.Middlename = tOtch.Text;
