@@ -13,7 +13,7 @@ namespace Soft4U.Classes
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((int)value == 1)
+            if ((int)value == 2)
             {
                 return "Collapsed";
             }
