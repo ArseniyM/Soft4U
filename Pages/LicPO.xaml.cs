@@ -39,6 +39,11 @@ namespace Soft4U.Pages
             this.Visibility = Visibility.Collapsed;
             editPO.ShowDialog();
             this.Visibility = Visibility.Visible;
+            LicPOAdminList.Items.Clear();
+            using (Soft4UDbContext context = new Soft4UDbContext())
+            {
+                LicPOAdminList.ItemsSource = context.Programs.ToList();
+            }
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -52,6 +57,8 @@ namespace Soft4U.Pages
                     {
                         context.Programs.Remove((Program)LicPOAdminList.SelectedValue);
                         context.SaveChanges();
+                        LicPOAdminList.Items.Clear();
+                        LicPOAdminList.ItemsSource = context.Programs.ToList();
                     }
                 }
                 else
@@ -68,6 +75,11 @@ namespace Soft4U.Pages
             this.Visibility = Visibility.Collapsed;
             addPO.ShowDialog();
             this.Visibility = Visibility.Visible;
+            LicPOAdminList.Items.Clear();
+            using (Soft4UDbContext context = new Soft4UDbContext())
+            {
+                LicPOAdminList.ItemsSource = context.Programs.ToList();
+            }
         }
     }
 }
