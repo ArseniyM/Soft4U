@@ -23,21 +23,21 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Создание заявки" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" FontSize="18"/>
         <TextBlock Text="Тема" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" Margin="10 20 10 20">
-            
+        <ComboBox Name="ComBoxTitel" Grid.Row="1" Grid.Column="1" Margin="10 20 10 20">
+
         </ComboBox>
         <TextBlock Text="Название лицензии" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" Margin="10 20 10 20">
-            
+        <ComboBox Name="ComBoxNameLic" Grid.Row="2" Grid.Column="1" Margin="10 20 10 20">
+
         </ComboBox>
         <StackPanel Margin="10" Grid.Row="3" Grid.Column="0">
             <TextBlock Text="Описание" FontSize="14"/>
-            <TextBox Height="100"/>
+            <TextBox Name="TxbDiscriptionPO" Height="100" IsReadOnly="True" TextWrapping="Wrap"/>
         </StackPanel>
         <StackPanel Margin="10" Grid.Row="3" Grid.Column="1">
             <TextBlock Text="Комментарий" FontSize="14" HorizontalAlignment="Right"/>
-            <TextBox Height="100"/>
+            <TextBox Name="TxbComent" Height="100" TextWrapping="Wrap"/>
         </StackPanel>
-        <Button Grid.ColumnSpan="2" Grid.Row="4" Content="Отправить" HorizontalAlignment="Center" Margin="0 0 0 6" Width="150"/>
+        <Button Grid.ColumnSpan="2" Grid.Row="4" Content="Отправить" HorizontalAlignment="Center" Margin="0 0 0 6" Width="150" Click="BtnClickSand"/>
     </Grid>
 </Window>
