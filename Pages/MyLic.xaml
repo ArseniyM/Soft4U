@@ -14,11 +14,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border>
-                        <Grid>
+                        <Grid Width="500">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
@@ -26,12 +24,12 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Text="{Binding Name}" Grid.Column="0" Width="100"/>
-                            <TextBlock Text="Описание" Grid.Column="1" Width="100"/>
-                            <TextBlock Text="Дата получения" Grid.Column="2" Width="150"/>
-                            <TextBlock Text="Дата окончания" Grid.Column="3" Width="150"/>
-                            <Button Name="Btn" Content="Подать заявку" Width="120" Margin="0 5 40 5" Visibility="Visible" Grid.ColumnSpan="2" Grid.Row="1"/>
-                            </Grid>
+                            <TextBlock Text="{Binding Name}" Grid.Column="0" />
+                            <TextBlock Text="{Binding Discription}" Grid.ColumnSpan="2" Grid.Row="1" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding DateLicens}" Grid.Column="1"/>
+                            <TextBlock Text="{Binding DateLicEnd}" Grid.Column="2"/>
+                            <Button Name="Btn" Content="Подать заявку" Width="120" Margin="0 5 0 5" Visibility="Visible" Grid.Column="3" Grid.Row="1" Click="BtnClickTakeApplication"/>
+                        </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>

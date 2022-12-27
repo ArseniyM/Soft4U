@@ -13,6 +13,8 @@
     <Page.Resources>
         <local:IdRoleToVisibilityUserConverter x:Key="IdRoleToVisibilityUserConverter"/>
         <local:IdRoleToVisibilityAdminConverter x:Key="IdRoleToVisibilityAdminConverter"/>
+        <local:MyLicListConectore x:Key="MyLicListConectore"/>
+        <local:DateLicConvectore x:Key="DateLicConvectore"/>
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -28,8 +30,8 @@
             <TextBlock Text="Клиенты" Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityAdminConverter}}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="15" Grid.Row="0"/>
             <DataGrid Name="dataGridPO"  Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityUserConverter}}" Margin="10 10 10 10" Grid.Row="1" CanUserReorderColumns="False" CanUserResizeColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="0.6*" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Время действия лицензии" Width="0.4*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Id, Converter={StaticResource MyLicListConectore}}" Width="0.3*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Время действия лицензии" Binding="{Binding Id, Converter={StaticResource DateLicConvectore}}" Width="0.4*" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid Name="dataGridClients"  Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityAdminConverter}}" Margin="10 10 10 10" Grid.Row="1" CanUserReorderColumns="False" CanUserResizeColumns="False">

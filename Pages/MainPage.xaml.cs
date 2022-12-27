@@ -1,4 +1,5 @@
 ﻿using Soft4U.Classes;
+using Soft4U.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,10 @@ namespace Soft4U.Pages
         {
             InitializeComponent();
             this.DataContext = CurrentUser.currentUser;
+            using (Soft4UDbContext context = new Soft4UDbContext())
+            {
+                dataGridClients.ItemsSource = context.UserPrograms.Where(e => e.Iduser == CurrentUser.currentUser.Id).ToList();
+            }
         }
     }
 }

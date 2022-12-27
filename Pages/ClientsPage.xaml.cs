@@ -1,4 +1,5 @@
 ﻿using System;
+using Soft4U.DB;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,10 @@ namespace Soft4U.Pages
         public ClientsPage()
         {
             InitializeComponent();
+            using (Soft4UDbContext context = new Soft4UDbContext())
+            {
+                MyLicList.ItemsSource = context.Users.ToList().Where(e => e.Role == 2);
+            }
         }
     }
 }
