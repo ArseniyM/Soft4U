@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soft4U.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Soft4U.Pages
         public MainPage()
         {
             InitializeComponent();
+            this.DataContext = CurrentUser.currentUser;
         }
     }
 }

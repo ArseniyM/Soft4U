@@ -26,6 +26,7 @@ namespace Soft4U.Windows
             InitializeComponent();
             FrameN.Navigate(new MainPage());
             App.MainFrame = FrameN;
+            this.DataContext = CurrentUser.currentUser;
 
             Binding binding = new Binding
             {
