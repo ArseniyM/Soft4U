@@ -1,4 +1,6 @@
 ﻿using Soft4U.Classes;
+using Soft4U.DB;
+using Soft4U.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,18 @@ namespace Soft4U.Pages
         {
             InitializeComponent();
             LicPOPage.DataContext = CurrentUser.currentUser;
+            using (Soft4UDbContext context = new Soft4UDbContext()) {
+                LicPOAdminList.ItemsSource = context.Programs.ToList();
+                LicPOUserList.ItemsSource = context.Programs.ToList();
+            }
+        }
+
+        private void Change_Click(object sender, RoutedEventArgs e)
+        {
+            EditPO editPO = new EditPO((Program)LicPOAdminList.SelectedValue);
+            this.Visibility = Visibility.Collapsed;
+            editPO.ShowDialog();
+            this.Visibility = Visibility.Visible;
         }
     }
 }

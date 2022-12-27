@@ -24,8 +24,9 @@
                     <TextBlock Text="Добрый день,"  FontSize="12"/>
                     <TextBlock Name="tLogin" FontSize="12"/>
                 </StackPanel>
-                
-                <Image Source="/Resources/exit.png" Margin="10" Name="BtnExit"/>
+                <Button Name="BtnExit" Margin="10" BorderThickness="0" Click="BtnExit_Click">
+                    <Image Source="/Resources/exit.png" />
+                </Button>
                 </StackPanel>
     </Grid>
         <Frame Grid.Row="1" Name="FrameN" NavigationUIVisibility="Hidden"/>

@@ -60,5 +60,13 @@ namespace Soft4U.Windows
         {
             FrameN.Navigate(new ClientsPage());
         }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentUser.currentUser = new DB.User();
+            Auth auth = new Auth();
+            auth.Show();
+            this.Close();
+        }
     }
 }

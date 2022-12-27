@@ -16,6 +16,8 @@
         </Style>
         <local:IdRoleToVisibilityAdminConverter x:Key="IdRoleToVisibilityAdminConverter"/>
         <local:IdRoleToVisibilityUserConverter x:Key="IdRoleToVisibilityUserConverter"/>
+        <local:CostConverter x:Key="CostConverter"/>
+        <local:LicenseConverter x:Key="LicenseConverter"/>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -30,15 +32,38 @@
             <Button Grid.Column="0" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="170" FontSize="18"/>
             <Image Grid.Column="1" Source="/Resources/cat4.png" Height="225"/>
         </Grid>
-        <ListView Name="LicPOList" Grid.Row="1" HorizontalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <ListView Name="LicPOUserList" Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityUserConverter}}" Grid.Row="1" HorizontalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border>
-                        <Grid>
+                        <Grid Margin="8" MinWidth="500" MaxWidth="800">
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.5*"/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
-                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="4"/>
+                            <TextBlock Text="{Binding Discription}" Width="500" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" Grid.Row="1" Margin="4" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Cost, Converter={StaticResource CostConverter}}" Grid.Column="1"/>
+                            <TextBlock Text="{Binding License, Converter={StaticResource LicenseConverter}}" Grid.Column="2"/>
+                            <Button  Name="Btn" Content="Подать заявку" Width="120" Margin="0 5 0 5" Grid.ColumnSpan="1" Grid.Row="2"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView Name="LicPOAdminList" Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityAdminConverter}}" Grid.Row="1" HorizontalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <Grid Margin="8" MinWidth="500" MaxWidth="800">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.5*"/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
@@ -48,15 +73,14 @@
                             </Grid.RowDefinitions>
                             <Grid.ContextMenu>
                                 <ContextMenu>
-                                    <MenuItem Header="Изменить" Name="Change" />
+                                    <MenuItem Header="Изменить" Name="Change" Click="Change_Click" />
                                     <MenuItem Header="Удалить" Name="Delete" />
                                 </ContextMenu>
                             </Grid.ContextMenu>
-                            <TextBlock Text="{Binding Name}" Width="100" Grid.Column="0"/>
-                            <TextBlock Text="Описание" Width="100" Grid.Column="1"/>
-                            <TextBlock Text="Стоимость" Width="100" Grid.Column="2"/>
-                            <TextBlock Text="Длительность" Width="120" Grid.Column="3"/>
-                            <Button  Name="Btn" Content="Подать заявку" Width="120" Margin="0 5 40 5" Visibility="Visible" Grid.ColumnSpan="2" Grid.Row="1"/>
+                            <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="4"/>
+                            <TextBlock Text="{Binding Discription}" Width="500" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" Grid.Row="1" Margin="4" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Cost, Converter={StaticResource CostConverter}}" Grid.Column="1"/>
+                            <TextBlock Text="{Binding License, Converter={StaticResource LicenseConverter}}" Grid.Column="2"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
