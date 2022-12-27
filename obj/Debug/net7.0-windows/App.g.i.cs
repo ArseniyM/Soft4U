@@ -59,7 +59,7 @@ namespace Soft4U {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/Soft4U;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Soft4U;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

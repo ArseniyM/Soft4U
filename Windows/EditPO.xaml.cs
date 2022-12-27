@@ -51,6 +51,8 @@ namespace Soft4U.Windows
                             editProgram.Discription = TxbDiscriptionEdit.Text;
                             editProgram.License = long.Parse(TxbTimeEdit.Text);
                             context.SaveChanges();
+                            MessageBox.Show("Изменения прошло успешно", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                            this.Close();
                         }
                         else
                         {
