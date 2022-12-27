@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="0.5*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="170" FontSize="18"/>
+            <Button Click="AddPOBtn_Click"  Grid.Column="0" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="170" FontSize="18"/>
             <Image Grid.Column="1" Source="/Resources/cat4.png" Height="225"/>
         </Grid>
         <ListView Name="LicPOUserList" Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityUserConverter}}" Grid.Row="1" HorizontalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}">

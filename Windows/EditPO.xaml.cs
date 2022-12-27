@@ -43,12 +43,19 @@ namespace Soft4U.Windows
                 {
                     using (Soft4UDbContext context = new Soft4UDbContext())
                     {
-                        editProgram = context.Programs.Where(e => e.Id == editProgram.Id).First();
-                        editProgram.Name = TxbNameEdit.Text;
-                        editProgram.Cost = double.Parse(TxbCostEdit.Text);
-                        editProgram.Discription = TxbDiscriptionEdit.Text;
-                        editProgram.License = long.Parse(TxbTimeEdit.Text);
-                        context.SaveChanges();
+                        if (context.Programs.Where(e => e.Id != editProgram.Id && e.Name == editProgram.Name).FirstOrDefault() == null)
+                        {
+                            editProgram = context.Programs.Where(e => e.Id == editProgram.Id).First();
+                            editProgram.Name = TxbNameEdit.Text;
+                            editProgram.Cost = double.Parse(TxbCostEdit.Text);
+                            editProgram.Discription = TxbDiscriptionEdit.Text;
+                            editProgram.License = long.Parse(TxbTimeEdit.Text);
+                            context.SaveChanges();
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Изменения не сохранены, так как уже существует ПО с именем {editProgram.Name}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
                     }
                 }
                 else

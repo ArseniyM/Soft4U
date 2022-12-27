@@ -61,5 +61,13 @@ namespace Soft4U.Pages
                 }
             }
         }
+
+        private void AddPOBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddPO addPO = new AddPO();
+            this.Visibility = Visibility.Collapsed;
+            addPO.ShowDialog();
+            this.Visibility = Visibility.Visible;
+        }
     }
 }
