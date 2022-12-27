@@ -49,6 +49,10 @@ public partial class Soft4UDbContext : DbContext
                 .HasForeignKey(d => d.Idprogramm)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
+            entity.HasOne(d => d.IdstatusNavigation).WithMany(p => p.ApplicationsUsers)
+                .HasForeignKey(d => d.Idstatus)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
             entity.HasOne(d => d.IdtypeNavigation).WithMany(p => p.ApplicationsUsers)
                 .HasForeignKey(d => d.Idtype)
                 .OnDelete(DeleteBehavior.ClientSetNull);
@@ -109,6 +113,16 @@ public partial class Soft4UDbContext : DbContext
             entity.HasOne(d => d.RoleNavigation).WithMany(p => p.Users)
                 .HasForeignKey(d => d.Role)
                 .OnDelete(DeleteBehavior.ClientSetNull);
+        });
+
+        modelBuilder.Entity<Status>(entity =>
+        {
+            entity.ToTable("Status");
+
+            entity.HasIndex(e => e.Id, "IX_Status_id").IsUnique();
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.StatusName).HasColumnName("statusName");
         });
 
         modelBuilder.Entity<UserProgram>(entity =>

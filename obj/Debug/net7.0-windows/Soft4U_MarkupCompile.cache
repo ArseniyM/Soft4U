@@ -1,5 +1,5 @@
 ﻿Soft4U
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Administrator\Source\Repos\ArseniyM\Soft4U\App.xaml
 114846223
 
-281025684636
-198-1736014856
+27-280101845
+2162013857658
 Pages\ApplicationPage.xaml;Pages\ClientsPage.xaml;Pages\LicPO.xaml;Pages\MainPage.xaml;Pages\MyLic.xaml;Windows\AddPO.xaml;Windows\AppCreate.xaml;Windows\Auth.xaml;Windows\EditPO.xaml;Windows\MainWindow.xaml;Windows\Registration.xaml;
 
-True
+False
 

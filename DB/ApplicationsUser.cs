@@ -13,6 +13,8 @@ public partial class ApplicationsUser
 
     public long Idtype { get; set; }
 
+    public long Idstatus { get; set; }
+
     public string? Comment { get; set; }
 
     public virtual Program IdprogrammNavigation { get; set; } = null!;
@@ -20,4 +22,5 @@ public partial class ApplicationsUser
     public virtual Type IdtypeNavigation { get; set; } = null!;
 
     public virtual User IduserNavigation { get; set; } = null!;
+    public virtual Status IdstatusNavigation { get; set; } = null!;
 }
