@@ -37,27 +37,34 @@ namespace Soft4U.Windows
         }
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (TxbNameEdit.Text != "" && TxbCostEdit.Text != "" && TxbDiscriptionEdit.Text != "" && TxbTimeEdit.Text != "")
+            try
             {
-                using (Soft4UDbContext context = new Soft4UDbContext())
+                if (TxbNameEdit.Text != "" && TxbCostEdit.Text != "" && TxbDiscriptionEdit.Text != "" && TxbTimeEdit.Text != "")
                 {
-                    editProgram = context.Programs.Where(e => e.Id == editProgram.Id).First();
-                    editProgram.Name = TxbNameEdit.Text;
-                    editProgram.Cost = double.Parse(TxbCostEdit.Text);
-                    editProgram.Discription = TxbDiscriptionEdit.Text;
-                    editProgram.License = long.Parse(TxbTimeEdit.Text);
-                    context.SaveChanges();
+                    using (Soft4UDbContext context = new Soft4UDbContext())
+                    {
+                        editProgram = context.Programs.Where(e => e.Id == editProgram.Id).First();
+                        editProgram.Name = TxbNameEdit.Text;
+                        editProgram.Cost = double.Parse(TxbCostEdit.Text);
+                        editProgram.Discription = TxbDiscriptionEdit.Text;
+                        editProgram.License = long.Parse(TxbTimeEdit.Text);
+                        context.SaveChanges();
+                    }
+                }
+                else
+                {
+                    string str = "Изменения не сохранены, так как не заполнены поля: ";
+                    str += (TxbNameEdit.Text == "") ? "  Название," : "";
+                    str += (TxbDiscriptionEdit.Text == "") ? "  Описание," : "";
+                    str += (TxbTimeEdit.Text == "") ? "  Длительность," : "";
+                    str += (TxbCostEdit.Text == "") ? "  Стоимость," : "";
+                    str = str.TrimEnd(',');
+                    MessageBox.Show(str, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            else
+            catch(Exception ex)
             {
-                string str = "Изменения не сохранены, так как не заполнены поля: ";
-                str += (TxbNameEdit.Text == "") ? "  Название," : "";
-                str += (TxbDiscriptionEdit.Text == "") ? "  Описание," : "";
-                str += (TxbTimeEdit.Text == "") ? "  Длительность," : "";
-                str += (TxbCostEdit.Text == "") ? "  Стоимость," : "";
-                str = str.TrimEnd(',');
-                MessageBox.Show(str, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Произошла ошибка. Изменения не сохранены.\n{ex.Message}", "Ошибка");
             }
         }
     }
