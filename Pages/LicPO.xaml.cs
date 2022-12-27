@@ -40,5 +40,26 @@ namespace Soft4U.Pages
             editPO.ShowDialog();
             this.Visibility = Visibility.Visible;
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            using (Soft4UDbContext context = new Soft4UDbContext())
+            {
+                if (context.UserPrograms.Where(e => e.Idprograms == ((Program)LicPOAdminList.SelectedValue).Id).Count() == 0)
+                {
+                    MessageBoxResult res = MessageBox.Show($"Вы уверены, что хотите удалить {((Program)LicPOAdminList.SelectedValue).Name}", "Удаление", MessageBoxButton.OKCancel);
+                    if (res == MessageBoxResult.OK)
+                    {
+                        context.Programs.Remove((Program)LicPOAdminList.SelectedValue);
+                        context.SaveChanges();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"На данный момент ряд пользователей обладают лицензией на {((Program)LicPOAdminList.SelectedValue).Name}.\n"+
+                        "Нельзя удалить ПО, если у пользователей есть действующие линцензии на него", "Невозможно аудалить");
+                }
+            }
+        }
     }
 }

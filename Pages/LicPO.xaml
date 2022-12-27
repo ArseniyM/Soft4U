@@ -74,7 +74,7 @@
                             <Grid.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="Изменить" Name="Change" Click="Change_Click" />
-                                    <MenuItem Header="Удалить" Name="Delete" />
+                                    <MenuItem Header="Удалить" Name="Delete" Click="Delete_Click" />
                                 </ContextMenu>
                             </Grid.ContextMenu>
                             <TextBlock Text="{Binding Name}" Grid.Column="0" Margin="4"/>
