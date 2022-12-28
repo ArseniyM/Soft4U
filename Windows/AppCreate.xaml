@@ -27,7 +27,7 @@
 
         </ComboBox>
         <TextBlock Text="Название лицензии" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <ComboBox Name="ComBoxNameLic" Grid.Row="2" Grid.Column="1" Margin="10 20 10 20">
+        <ComboBox Name="ComBoxNameLic" Grid.Row="2" Grid.Column="1" Margin="10 20 10 20" SelectionChanged="ComBoxNameLic_SelectionChanged">
 
         </ComboBox>
         <StackPanel Margin="10" Grid.Row="3" Grid.Column="0">

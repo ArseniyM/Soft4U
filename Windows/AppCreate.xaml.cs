@@ -22,7 +22,31 @@ namespace Soft4U.Windows
     /// Логика взаимодействия для AppCreate.xaml
     /// </summary>
     public partial class AppCreate : Window
-    {
+    {//Передать
+        public AppCreate(object prog, int idtype)
+        {
+            InitializeComponent();
+            using (Soft4UDbContext context = new Soft4UDbContext())
+            {
+                ComBoxTitel.ItemsSource = context.Types.OrderBy(e => e.Id).Select(e => e.Name).ToList();
+                ComBoxNameLic.ItemsSource = context.Programs.Select(e => e.Name).ToList();
+                ComBoxTitel.SelectedIndex = idtype - 1;
+                ComBoxTitel.IsReadOnly = true;//Не работае!
+                if (prog.GetType() == typeof(UserProgramList))
+                {
+                    ComBoxNameLic.SelectedIndex = context.Programs.Where(e => e.Name == ((UserProgramList)prog).Name).Select(e => (int)e.Id).First() - 1;
+                    ComBoxTitel.IsReadOnly = true;//Не работае!
+                    TxbDiscriptionPO.Text = context.Programs.Where(e => e.Name == ((UserProgramList)prog).Name).Select(e => e.Discription).First();
+                }
+                else
+                {
+                    ComBoxNameLic.SelectedIndex = context.Programs.Where(e => e.Name == ((Program)prog).Name).Select(e => (int)e.Id).First() - 1;
+                    ComBoxTitel.IsReadOnly = true;//Не работае!
+                    TxbDiscriptionPO.Text = context.Programs.Where(e => e.Name == ((Program)prog).Name).Select(e => e.Discription).First();
+                }
+            }
+        }
+        //Передать
         public AppCreate()
         {
             InitializeComponent();
@@ -30,10 +54,8 @@ namespace Soft4U.Windows
             {
                 ComBoxTitel.ItemsSource = context.Types.OrderBy(e => e.Id).Select(e => e.Name).ToList();
                 ComBoxNameLic.ItemsSource = context.Programs.Select(e => e.Name).ToList();
-
             }
         }
-
         private void BtnClickSand(object sender, RoutedEventArgs e)
         {
             try
@@ -67,6 +89,15 @@ namespace Soft4U.Windows
             catch (Exception ex)
             {
                 MessageBox.Show($"Произошла ошибка. Заявка не была создана.\n{ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void ComBoxNameLic_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            using (Soft4UDbContext context = new Soft4UDbContext())
+            {
+                if (ComBoxNameLic != null && TxbDiscriptionPO != null)
+                    TxbDiscriptionPO.Text = context.Programs.Where(e => e.Name == ComBoxNameLic.Text).Select(e => e.Discription).FirstOrDefault();
             }
         }
     }

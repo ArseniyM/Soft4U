@@ -71,7 +71,7 @@ namespace Soft4U.Windows
                     MessageBox.Show(str, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Произошла ошибка. Изменения не сохранены.\n{ex.Message}", "Ошибка");
             }
