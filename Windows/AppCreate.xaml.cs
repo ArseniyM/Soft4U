@@ -30,7 +30,7 @@ namespace Soft4U.Windows
             {
                 ComBoxTitel.ItemsSource = context.Types.OrderBy(e => e.Id).Select(e => e.Name).ToList();
                 ComBoxNameLic.ItemsSource = context.Programs.Select(e => e.Name).ToList();
-                ComBoxTitel.SelectedIndex = idtype - 1;
+                ComBoxTitel.SelectedIndex = idtype;
                 ComBoxTitel.IsReadOnly = true;//Не работае!
                 if (prog.GetType() == typeof(UserProgramList))
                 {
@@ -62,15 +62,16 @@ namespace Soft4U.Windows
             {
                 using (Soft4UDbContext context = new Soft4UDbContext())
                 {
-                    if (context.ApplicationsUsers.Where(e => e.Idtype == ComBoxTitel.SelectedIndex + 1 &&
+                    if (context.ApplicationsUsers.Where(e => e.Idtype == ComBoxTitel.SelectedIndex &&
                     e.Idprogramm == context.Programs.Where(e => e.Name == ComBoxNameLic.Text).First().Id &&
-                    e.Iduser == CurrentUser.currentUser.Id
+                    e.Iduser == CurrentUser.currentUser.Id && e.Idstatus == 1
                     ).FirstOrDefault() == null)
                     {
                         ApplicationsUser application = new ApplicationsUser();
                         application.Idtype = ComBoxTitel.SelectedIndex + 1;
                         application.Idprogramm = context.Programs.Where(e => e.Name == ComBoxNameLic.Text).First().Id;
                         application.Iduser = CurrentUser.currentUser.Id;
+                        application.Idstatus = 1;
                         if (TxbComent.Text != null)
                         {
                             application.Comment = TxbComent.Text;
@@ -92,12 +93,13 @@ namespace Soft4U.Windows
             }
         }
 
-        private void ComBoxNameLic_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComBoxNameLic_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+
             using (Soft4UDbContext context = new Soft4UDbContext())
             {
                 if (ComBoxNameLic != null && TxbDiscriptionPO != null)
-                    TxbDiscriptionPO.Text = context.Programs.Where(e => e.Name == ComBoxNameLic.Text).Select(e => e.Discription).FirstOrDefault();
+                    TxbDiscriptionPO.Text = context.Programs.Where(i => i.Name == e.AddedItems[0].ToString()).Select(e => e.Discription).FirstOrDefault();
             }
         }
     }

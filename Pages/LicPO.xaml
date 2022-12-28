@@ -51,7 +51,7 @@
                             <TextBlock Text="{Binding Discription}" Width="500" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" Grid.Row="1" Margin="4" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Cost, Converter={StaticResource CostConverter}}" Grid.Column="1"/>
                             <TextBlock Text="{Binding License, Converter={StaticResource LicenseConverter}}" Grid.Column="2"/>
-                            <Button  Name="Btn" Content="Подать заявку" Width="120" Margin="0 5 0 5" Grid.ColumnSpan="1" Grid.Row="2"/>
+                            <Button Click="Btn_Click"  Name="Btn" Content="Подать заявку" Width="120" Margin="0 5 0 5" Grid.ColumnSpan="1" Grid.Row="2"/>
                         </Grid>
                     </Border>
                 </DataTemplate>

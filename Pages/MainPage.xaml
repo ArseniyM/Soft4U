@@ -13,8 +13,6 @@
     <Page.Resources>
         <local:IdRoleToVisibilityUserConverter x:Key="IdRoleToVisibilityUserConverter"/>
         <local:IdRoleToVisibilityAdminConverter x:Key="IdRoleToVisibilityAdminConverter"/>
-        <local:MyLicListConectore x:Key="MyLicListConectore"/>
-        <local:DateLicConvectore x:Key="DateLicConvectore"/>
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -30,15 +28,16 @@
             <TextBlock Text="Клиенты" Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityAdminConverter}}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="15" Grid.Row="0"/>
             <DataGrid Name="dataGridPO"  Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityUserConverter}}" Margin="10 10 10 10" Grid.Row="1" CanUserReorderColumns="False" CanUserResizeColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Название" Binding="{Binding Id, Converter={StaticResource MyLicListConectore}}" Width="0.3*" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Время действия лицензии" Binding="{Binding Id, Converter={StaticResource DateLicConvectore}}" Width="0.4*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="0.3*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Время действия лицензии" Binding="{Binding Date}" Width="0.4*" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid Name="dataGridClients"  Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityAdminConverter}}" Margin="10 10 10 10" Grid.Row="1" CanUserReorderColumns="False" CanUserResizeColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="" Width="0.2*" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="" Width="0.4*" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="" Width="0.4*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Фвмилия" Width="0.23*" Binding="{Binding SurName}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Имя" Width="0.22*" Binding="{Binding Name}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Отчество" Width="0.3*" Binding="{Binding MidlName}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Заявки" Width="0.25*" Binding="{Binding LicCount}" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -50,11 +49,18 @@
             </Grid.RowDefinitions>
             <TextBlock Text="Мои заявки"  Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityUserConverter}}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="15" Grid.Row="0"/>
             <TextBlock Text="Заявки"  Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityAdminConverter}}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="15" Grid.Row="0"/>
-            <DataGrid Grid.Row="1" Margin="10 10 10 0" CanUserReorderColumns="False" CanUserResizeColumns="False">
+            <DataGrid Name="dataGridClientApp" Grid.Row="1" Margin="10 10 10 0" CanUserReorderColumns="False" CanUserResizeColumns="False" Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityAdminConverter}}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="" Width="0.2*" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="" Width="0.4*" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="" Width="0.4*" IsReadOnly="True"/>
+                    <DataGridTextColumn Width="0.38*" Header="Тип" Binding="{Binding Type}" IsReadOnly="True"/>
+                    <DataGridTextColumn Width="0.22*" Header="Название" Binding="{Binding Name}" IsReadOnly="True"/>
+                    <DataGridTextColumn Width="0.4*" Header="ФИО" Binding="{Binding FIO}" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Name="dataGridUserApp" Grid.Row="1" Margin="10 10 10 0" CanUserReorderColumns="False" CanUserResizeColumns="False" Visibility="{Binding Role, Converter={StaticResource IdRoleToVisibilityUserConverter}}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="0.4*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="0.3*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding StatusApp}" Width="0.3*" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Image Source="/Resources/cat3.png" VerticalAlignment="Bottom" Grid.Row="2"/>

@@ -31,7 +31,7 @@ namespace Soft4U.Pages
                 if (CurrentUser.currentUser.Role == 1)
                     MyLicList.ItemsSource = context.ApplicationsUsers.Where(e => e.Idstatus == 1).ToList();
                 else
-                    MyLicList.ItemsSource = context.ApplicationsUsers.OrderByDescending(e => e.Idstatus).ToList();
+                    MyLicList.ItemsSource = context.ApplicationsUsers.Where(e => e.Iduser == CurrentUser.currentUser.Id).OrderByDescending(e => e.Idstatus).ToList();
             }
         }
 
@@ -48,16 +48,16 @@ namespace Soft4U.Pages
                         UserProgram prog = new UserProgram();
                         prog.Idprograms = app.Idprogramm;
                         prog.Iduser = app.Iduser;
-                        prog.DateLicens = (new DateOnly()).ToShortDateString();
+                        prog.DateLicens = (DateTime.Now).ToShortDateString();
                         prog.DateLicEnd = DateOnly.Parse(prog.DateLicens).AddMonths((int)context.Programs.Where(e => e.Id == prog.Idprograms).First().License).ToString();
-
+                        context.UserPrograms.Add(prog);
                         app.Idstatus = 3;
                         context.SaveChanges();
                         MyLicList.ItemsSource = null;
                         if (CurrentUser.currentUser.Id == 1)
                             MyLicList.ItemsSource = context.ApplicationsUsers.Where(e => e.Idstatus == 1).ToList();
                         else
-                            MyLicList.ItemsSource = context.ApplicationsUsers.OrderByDescending(e => e.Idstatus).ToList();
+                            MyLicList.ItemsSource = context.ApplicationsUsers.Where(e => e.Iduser == CurrentUser.currentUser.Id).OrderByDescending(e => e.Idstatus).ToList();
                     };
                 }
             }
@@ -81,7 +81,7 @@ namespace Soft4U.Pages
                         if (CurrentUser.currentUser.Role == 1)
                             MyLicList.ItemsSource = context.ApplicationsUsers.Where(e => e.Idstatus == 1).ToList();
                         else
-                            MyLicList.ItemsSource = context.ApplicationsUsers.OrderByDescending(e => e.Idstatus).ToList();
+                            MyLicList.ItemsSource = context.ApplicationsUsers.Where(e => e.Iduser == CurrentUser.currentUser.Id).OrderByDescending(e => e.Idstatus).ToList();
                     };
                 }
             }
@@ -103,7 +103,7 @@ namespace Soft4U.Pages
                         if (CurrentUser.currentUser.Role == 1)
                             MyLicList.ItemsSource = context.ApplicationsUsers.Where(e => e.Idstatus == 1).ToList();
                         else
-                            MyLicList.ItemsSource = context.ApplicationsUsers.OrderByDescending(e => e.Idstatus).ToList();
+                            MyLicList.ItemsSource = context.ApplicationsUsers.Where(e => e.Iduser == CurrentUser.currentUser.Id).OrderByDescending(e => e.Idstatus).ToList();
                     };
                 }
             }

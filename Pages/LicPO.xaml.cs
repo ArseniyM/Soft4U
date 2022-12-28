@@ -81,5 +81,13 @@ namespace Soft4U.Pages
                 LicPOAdminList.ItemsSource = context.Programs.ToList();
             }
         }
+
+        private void Btn_Click(object sender, RoutedEventArgs e)
+        {
+            AppCreate appCreate = new AppCreate(((Button)sender).DataContext, 0);
+            this.Visibility = Visibility.Collapsed;
+            appCreate.ShowDialog();
+            this.Visibility = Visibility.Visible;
+        }
     }
 }
