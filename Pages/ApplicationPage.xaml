@@ -31,7 +31,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Подать заявку" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="170" FontSize="18"/>
+            <Button Grid.Column="0" Content="Подать заявку" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="170" FontSize="18" Click="Button_Click"/>
             <Image Grid.Column="1" Source="/Resources/cat2.png"/>
         </Grid>
         <ListView Name="MyLicList" Grid.Row="1" HorizontalAlignment="Center" >

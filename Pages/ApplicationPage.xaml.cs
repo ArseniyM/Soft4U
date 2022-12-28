@@ -1,5 +1,6 @@
 ﻿using Soft4U.Classes;
 using Soft4U.DB;
+using Soft4U.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,6 +108,14 @@ namespace Soft4U.Pages
                     };
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AppCreate appCreate = new AppCreate();
+            this.Visibility = Visibility.Collapsed;
+            appCreate.ShowDialog();
+            this.Visibility = Visibility.Visible;
         }
     }
 }
